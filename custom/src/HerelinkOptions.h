@@ -13,5 +13,4 @@ public:
     bool wifiReliableForCalibration () const override { return true; }
     bool showFirmwareUpgrade        () const override { return false; }
     bool multiVehicleEnabled        () const override { return false; }
-    bool joystickUseButtonsOnly     () const override { return true; }
 };
