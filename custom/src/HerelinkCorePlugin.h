@@ -7,6 +7,8 @@
 
 #include <QObject>
 
+class Vehicle;
+
 Q_DECLARE_LOGGING_CATEGORY(HerelinkCorePluginLog)
 
 class HerelinkCorePlugin : public QGCCorePlugin
@@ -23,6 +25,9 @@ public:
 
     // Overrides from QGCTool
     void setToolbox(QGCToolbox* toolbox) override;
+
+private slots:
+    void _activeVehicleChanged(Vehicle* activeVehicle);
 
 private:
     HerelinkOptions* _herelinkOptions = nullptr;

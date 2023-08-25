@@ -3,6 +3,10 @@
 #include "AutoConnectSettings.h"
 #include "VideoSettings.h"
 #include "AppSettings.h"
+#include "QGCApplication.h"
+#include "JoystickManager.h"
+#include "Vehicle.h"
+#include "MultiVehicleManager.h"
 
 #include <list>
 
@@ -19,6 +23,9 @@ void HerelinkCorePlugin::setToolbox(QGCToolbox* toolbox)
     QGCCorePlugin::setToolbox(toolbox);
 
     _herelinkOptions = new HerelinkOptions(this, nullptr);
+
+     auto multiVehicleManager = qgcApp()->toolbox()->multiVehicleManager();
+     connect(multiVehicleManager, &MultiVehicleManager::activeVehicleChanged, this, &HerelinkCorePlugin::_activeVehicleChanged);
 }
 
 bool HerelinkCorePlugin::overrideSettingsGroupVisibility(QString name)
@@ -65,4 +72,17 @@ bool HerelinkCorePlugin::adjustSettingMetaData(const QString& settingsGroup, Fac
     }
 
     return true; // Show all settings in ui
+}
+
+void HerelinkCorePlugin::_activeVehicleChanged(Vehicle* activeVehicle)
+{
+    if (activeVehicle) {
+        auto joystickManager = qgcApp()->toolbox()->joystickManager();
+        if (joystickManager->setActiveJoystickName("gpio-keys")) {
+            qDebug() << "Herelink joystick enable";
+            activeVehicle->setJoystickEnabled(true);
+        } else {
+            qgcApp()->showAppMessage(tr("ERROR: Herelink buttons joystick not found. Controller buttons will not work."));
+        }
+    }
 }
