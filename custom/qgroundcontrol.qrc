@@ -207,6 +207,7 @@
 		<file alias="QGroundControl/FlightDisplay/FlightDisplayViewVideo.qml">../src/FlightDisplay/FlightDisplayViewVideo.qml</file>
 		<file alias="QGroundControl/FlightDisplay/FlightDisplayViewWidgets.qml">../src/FlightDisplay/FlightDisplayViewWidgets.qml</file>
 		<file alias="QGroundControl/FlightDisplay/FlyView.qml">../src/FlightDisplay/FlyView.qml</file>
+		<file alias="QGroundControl/FlightDisplay/FlyViewCustomLayer.qml">../src/FlightDisplay/FlyViewCustomLayer.qml</file>
 		<file alias="QGroundControl/FlightDisplay/FlyViewInstrumentPanel.qml">../src/FlightDisplay/FlyViewInstrumentPanel.qml</file>
 		<file alias="QGroundControl/FlightDisplay/FlyViewMap.qml">../src/FlightDisplay/FlyViewMap.qml</file>
 		<file alias="QGroundControl/FlightDisplay/FlyViewMissionCompleteDialog.qml">../src/FlightDisplay/FlyViewMissionCompleteDialog.qml</file>
@@ -286,8 +287,6 @@
 		<file alias="VibrationPage.qml">../src/AnalyzeView/VibrationPage.qml</file>
 		<file alias="VirtualJoystick.qml">../src/FlightDisplay/VirtualJoystick.qml</file>
 		<file alias="VTOLLandingPatternEditor.qml">../src/PlanView/VTOLLandingPatternEditor.qml</file>
-		<file alias="QGroundControl/Controls/MockLinkOptionsDlg.qml">../src/comm/MockLinkOptionsDlg.qml</file>
-		<file alias="QGroundControl/FlightDisplay/FlyViewInsetViewer.qml">../src/FlightDisplay/FlyViewInsetViewer.qml</file>
 	</qresource>
 	<qresource prefix="/FirstRunPromptDialogs">
 		<file alias="UnitsFirstRunPrompt.qml">../src/FirstRunPromptDialogs/UnitsFirstRunPrompt.qml</file>
@@ -346,8 +345,6 @@
 		<file alias="Vehicle/VibrationFact.json">../src/Vehicle/VibrationFact.json</file>
 		<file alias="Vehicle/WindFact.json">../src/Vehicle/WindFact.json</file>
 		<file alias="Vehicle/HygrometerFact.json">../src/Vehicle/HygrometerFact.json</file>
-		<file alias="Vehicle/GeneratorFact.json">../src/Vehicle/GeneratorFact.json</file>
-		<file alias="Vehicle/EFIFact.json">../src/Vehicle/EFIFact.json</file>
 		<file alias="Video.SettingsGroup.json">../src/Settings/Video.SettingsGroup.json</file>
 		<file alias="VTOLLandingPattern.FactMetaData.json">../src/MissionManager/VTOLLandingPattern.FactMetaData.json</file>
 	</qresource>
@@ -359,5 +356,8 @@
 		<file alias="Parameter.MetaData.json.xz">../src/comm/MockLink.Parameter.MetaData.json.xz</file>
 		<file alias="Parameter.MetaData.json">../src/comm/MockLink.Parameter.MetaData.json</file>
 		<file alias="Arduplane.params.ftp.bin">../src/comm/Mocklink.Arduplane.params.ftp.bin</file>
+	</qresource>
+	<qresource prefix="/qml">
+		<file alias="QGroundControl/Controls/MockLinkOptionsDlg.qml">../src/comm/MockLinkOptionsDlg.qml</file>
 	</qresource>
 </RCC>
