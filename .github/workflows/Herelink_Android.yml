@@ -65,12 +65,13 @@ jobs:
           ndk-version: r21e
           add-to-path: false
 
-      - name: Remove Android SDK android-33-ext
+      - name: Remove incorrect Android SDKs
         run: |
             ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager --uninstall "platforms;android-33-ext5"
             ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager --uninstall "platforms;android-33-ext4"
             ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager --uninstall "platforms;android-34"
             ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager --uninstall "platforms;android-34-ext8"
+            ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager --uninstall "platforms;android-34-ext10"
 
       - name: Install ccache
         run:  sudo apt-get install ccache
